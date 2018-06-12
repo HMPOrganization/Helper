@@ -56,15 +56,10 @@ namespace TEST
 
 
         /// <summary>
-
         /// 绑定DataGridView数据到DataTable
-
         /// </summary>
-
         /// <param name="dgv">复制数据的DataGridView</param>
-
         /// <returns>返回的绑定数据后的DataTable</returns>
-
         public DataTable GetDgvToTable(DataGridView dgv)
 
         {
