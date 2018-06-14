@@ -67,7 +67,7 @@ namespace TEST
             DataTable dt = new DataTable();
 
             // 列强制转换
-
+            
             for (int count = 0; count < dgv.Columns.Count; count++)
 
             {
@@ -75,6 +75,8 @@ namespace TEST
                 DataColumn dc = new DataColumn(dgv.Columns[count].Name.ToString());
 
                 dt.Columns.Add(dc);
+
+               
 
             }
 
