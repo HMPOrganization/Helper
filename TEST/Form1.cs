@@ -49,6 +49,7 @@ namespace TEST
 
         private void button2_Click(object sender, EventArgs e)
         {
+
             DataTable dt = GetDgvToTable(this.exDataGridView1);
             NPOIHelper.NPOIExtent.WriteExcel(dt, @"d:\1.xls");
         }
