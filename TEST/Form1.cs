@@ -124,8 +124,8 @@ namespace TEST
                 // Application.DoEvents();
             }
 
-            System.Threading.Thread.Sleep(10000);
-            //MyContrals.WaitFormService.Close();
+            //System.Threading.Thread.Sleep(10000);
+            MyContrals.WaitFormService.Close();
 
             MessageBox.Show("aac");
             // this.Activate();
