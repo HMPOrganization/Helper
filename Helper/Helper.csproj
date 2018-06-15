@@ -34,6 +34,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
+    <DocumentationFile>bin\Release\Helper.XML</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
@@ -111,7 +112,6 @@
     <Compile Include="DEncrypt\Security.cs" />
     <Compile Include="DownLoadFile\HttpDownLoadFile.cs" />
     <Compile Include="Excel\Excel.cs" />
-    <Compile Include="Excel\NPOIHelper.cs" />
     <Compile Include="Extension.cs" />
     <Compile Include="Http\Http.cs" />
     <Compile Include="file\file_io.cs" />

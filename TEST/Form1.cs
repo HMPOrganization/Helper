@@ -51,7 +51,9 @@ namespace TEST
         {
 
             DataTable dt = GetDgvToTable(this.exDataGridView1);
-            NPOIHelper.NPOIExtent.WriteExcel(dt, @"d:\1.xls");
+            Helper.Excel.ExcelHelper a = new Helper.Excel.ExcelHelper(@"d:\1.xls");
+            a.DataTableToExcel(dt, "sheet1", true);
+            
         }
 
 
@@ -133,6 +135,11 @@ namespace TEST
             // this.Enabled = true;
 
             
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+           
         }
     }
 }
