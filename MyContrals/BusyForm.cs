@@ -11,7 +11,7 @@ using System.Windows.Forms;
 namespace MyContrals
 {
 
-     public partial class BusyForm : Form
+     internal partial class BusyForm : Form
     {
 
         [DllImport("user32")]
