@@ -229,7 +229,27 @@ namespace Helper.Excel
 
         #endregion
 
-        #region 将excel中的数据导入到DataTable中
+        #region 将excel中的数据导入到DataSet中
+
+        /// <summary>
+        /// 将excel中的数据导入到DataSet中
+        /// </summary>
+        /// <returns></returns>
+        public DataSet exceltoDataSet()
+        {
+            DataSet return_datrset = new DataSet();
+            List <string> excel_name_list = new List<string>();
+            excel_name_list = excel_sheet_list();
+
+            foreach (string item in excel_name_list)
+            {
+                DataTable dt = new DataTable();
+                dt= ExcelToDataTable(item, true);
+                dt.TableName = item;
+                return_datrset.Tables.Add(dt);
+            }
+            return return_datrset;
+        }
 
         #endregion
 
