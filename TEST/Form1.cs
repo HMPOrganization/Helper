@@ -104,5 +104,35 @@ namespace TEST
             return dt;
 
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            
+            // this.Enabled = false;
+
+            MyContrals.WaitFormService.Show(this);
+
+            MyContrals.WaitFormService.SetLeftText("lefttext");
+            MyContrals.WaitFormService.SetProgressBarMax(100, "啥意思?");
+            MyContrals.WaitFormService.SetRightText("righttext");
+            MyContrals.WaitFormService.SetTopText("toptext");
+
+            for (int i = 1; i <= 100; i++)
+            {
+
+                MyContrals.WaitFormService.ProgressBarGrow();
+                System.Threading.Thread.Sleep(100);
+                // Application.DoEvents();
+            }
+
+            //System.Threading.Thread.Sleep(10000);
+            MyContrals.WaitFormService.Close();
+
+            MessageBox.Show("aac");
+            // this.Activate();
+            // this.Enabled = true;
+
+            
+        }
     }
 }
