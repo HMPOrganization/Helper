@@ -32,8 +32,9 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.exDataGridView1 = new MyContrals.ExDataGridView();
             this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.exDataGridView1 = new MyContrals.ExDataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.exDataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -67,6 +68,26 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(442, 470);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(324, 68);
+            this.button4.TabIndex = 4;
+            this.button4.Text = "button4";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(90, 223);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(119, 46);
+            this.button5.TabIndex = 5;
+            this.button5.Text = "测试导入";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
             // exDataGridView1
             // 
             this.exDataGridView1.AllowUserToAddRows = false;
@@ -81,22 +102,15 @@
             this.exDataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.exDataGridView1.Size = new System.Drawing.Size(518, 348);
             this.exDataGridView1.TabIndex = 1;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(442, 470);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(324, 68);
-            this.button4.TabIndex = 4;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.exDataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.exDataGridView1_CellContentClick);
+            this.exDataGridView1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.exDataGridView1_MouseDown);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1076, 705);
+            this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
@@ -116,6 +130,7 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
     }
 }
 

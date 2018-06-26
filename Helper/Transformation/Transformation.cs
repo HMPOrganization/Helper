@@ -554,7 +554,7 @@ namespace Helper.Transformation
 
                 {
 
-                    DataColumn dc = new DataColumn(dgv.Columns[count].Name.ToString());
+                    DataColumn dc = new DataColumn(dgv.Columns[count].HeaderText.ToString());
 
                     dt.Columns.Add(dc);
 

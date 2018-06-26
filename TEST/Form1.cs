@@ -21,22 +21,24 @@ namespace TEST
         {
 
             DataTable dt = new DataTable();
-            DataColumn column1 = new DataColumn("A", typeof(System.Int32));
+            DataColumn column1 = new DataColumn("A", typeof(System.String));
             DataColumn column2 = new DataColumn("B", typeof(System.String));
             DataColumn column3 = new DataColumn("C", typeof(System.DateTime));
             DataColumn column4 = new DataColumn("D", typeof(System.Int32));
             DataColumn column5 = new DataColumn("E", typeof(System.Int32));
+       
             dt.Columns.Add(column1);
             dt.Columns.Add(column2);
             dt.Columns.Add(column3);
             dt.Columns.Add(column4);
             dt.Columns.Add(column5);
+     
             DataRow dr;
             for (int i = 0; i < 10; i++)
             {
                 dr = dt.NewRow();
-                dr["A"] = i + 1;
-                dr["B"] = i + 2;
+                dr["A"] = string.Empty;
+                dr["B"] = null;
                 dr["C"] = DateTime.Now;
                 dr["D"] = i + 4;
                 dr["E"] = i + 5;
@@ -50,9 +52,22 @@ namespace TEST
         private void button2_Click(object sender, EventArgs e)
         {
 
-            DataTable dt = GetDgvToTable(this.exDataGridView1);
-            Helper.Excel.ExcelHelper a = new Helper.Excel.ExcelHelper(@"d:\1.xls");
-            a.DataTableToExcel(dt, "sheet1", true);
+            //DataTable dt = GetDgvToTable(this.exDataGridView1);
+            //Helper.Excel.ExcelHelper a = new Helper.Excel.ExcelHelper(@"d:\1.xls");
+            //a.DataTableToExcel(dt, "sheet1", true);
+
+
+
+            //MyContrals.ToExcel.ExDataGridViewToExcel(this.exDataGridView1);
+            try
+            {
+                Helper.Excel.Excel_Export.DataGridViewToExcel(this.exDataGridView1);
+            }
+            catch (Exception ex )
+            {
+
+                MessageBox.Show(ex.Message);
+            }
             
         }
 
@@ -140,6 +155,36 @@ namespace TEST
         private void button4_Click(object sender, EventArgs e)
         {
            
+        }
+
+      
+
+        private void exDataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void exDataGridView1_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button== MouseButtons.Right)
+            {
+                this.exDataGridView1.Focus();
+            }
+            
+        }
+
+        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
+        {
+            this.ActiveControl = (sender as ContextMenuStrip).SourceControl;
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            DataTable dt = new DataTable();
+
+            dt = Helper.Excel.Excel_Export.ExcelToDataTable();
+
+            Console.WriteLine();
         }
     }
 }
