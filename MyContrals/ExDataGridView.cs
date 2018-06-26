@@ -127,7 +127,53 @@ namespace MyContrals
         #endregion
 
 
+        /// <summary>
+        /// 将ExDataGridView中的数据导出到Excel文件中
+        /// </summary>
+        /// <param name="gridview">要导出的ExDataGridView</param>
+        /// <returns></returns>
+        public static bool ExDataGridViewToExcel(ExDataGridView gridview)
+        {
 
+            System.Windows.Forms.SaveFileDialog SFD = new System.Windows.Forms.SaveFileDialog();
+
+            string FileName = "";
+
+            if (gridview.Columns.Count == 0)
+            {
+                throw new Exception("没有可以导出的数据！");
+            }
+
+            SFD.Filter = "Excel文件(*.xls)|*.xls";
+            SFD.Title = "导出Excel表";
+
+            if (SFD.ShowDialog() == System.Windows.Forms.DialogResult.Cancel)
+            {
+                return false;
+            }
+
+
+            FileName = SFD.FileName.ToString().Trim();
+
+
+            try
+            {
+                DataTable dt = Helper.Transformation.Transformation.DataConvert.GetDgvToTable(gridview);
+                Helper.Excel.ExcelHelper a = new Helper.Excel.ExcelHelper(FileName);
+                a.DataTableToExcel(dt, "sheet1", true);
+            }
+
+            catch (Exception ex)
+            {
+
+                throw new Exception(ex.Message);
+
+            }
+
+
+
+            return true;
+        }
 
 
         #region 重写的事件
